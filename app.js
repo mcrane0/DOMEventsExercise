@@ -43,3 +43,25 @@ form.addEventListener('submit', function(){
     "OH NO! This button is NOT going to work anymore". And finally, when the button is clicked a fourth, fifth, 
     sixth, etc. time have it do nothing (AKA Disable the button).
 */
+
+const allElements = document.querySelector('*');
+
+const darkMode = document.querySelector('#dm');
+
+darkMode.addEventListener('click', function(){
+    allElements.classList.toggle('dark-mode');
+});
+
+const times = document.querySelector('#times');
+
+let timesClicked = 0;
+
+times.addEventListener('click', function(){
+    timesClicked++;
+    if (timesClicked === 1 || timesClicked === 2){
+        alert("You clicked the last button! Congrats!");
+    }
+    else if (timesClicked === 3){
+        alert("OH NO! This button is NOT going to work anymore");
+    }
+});
